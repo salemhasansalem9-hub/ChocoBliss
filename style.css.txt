@@ -9,7 +9,7 @@ body::before {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: url('https://i.ibb.co/ZmX2P8S/chocolate-dust.png') repeat;
+  background: url('images/chocolate-dust.png') repeat;
   opacity: 0.1;
   animation: moveDust 60s linear infinite;
   pointer-events: none;
@@ -31,6 +31,8 @@ header {
 }
 header h1 { font-size: 3rem; margin-bottom: 1rem; }
 header p { font-size: 1.3rem; }
+
+/* Hero Image */
 header img {
   width: 80%;
   max-width: 600px;
@@ -39,97 +41,38 @@ header img {
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   animation: float 3s ease-in-out infinite;
 }
-@keyframes float {
-  0%,100% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-}
+@keyframes float { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
 
-/* Section Styles */
+/* Sections */
 section { padding: 4rem 2rem; text-align: center; position: relative; }
 section h2 { font-size: 2rem; margin-bottom: 2rem; color: #4e342e; }
 
 /* Menu Grid */
-.menu {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: auto;
-}
-.menu-item {
-  background: #fff7f0;
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  overflow: hidden;
-}
-.menu-item:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-}
-.menu-item img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 1rem;
-  transition: transform 0.5s ease;
-}
-.menu-item img:hover {
-  transform: scale(1.05) rotate(2deg);
-}
+.menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1200px; margin: auto; }
+.menu-item { background: #fff7f0; border-radius: 20px; padding: 1.5rem; box-shadow: 0 6px 20px rgba(0,0,0,0.1); transition: transform 0.5s ease, box-shadow 0.5s ease; overflow: hidden; }
+.menu-item:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
+.menu-item img { width: 100%; border-radius: 15px; margin-bottom: 1rem; transition: transform 0.5s ease; }
+.menu-item img:hover { transform: scale(1.05) rotate(2deg); }
 .menu-item h3 { margin-bottom: 0.5rem; color: #3e2723; }
 .menu-item p { margin-bottom: 1rem; }
 
-/* Pricing Table */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-  text-align: center;
-  font-size: 0.9rem;
-}
-th, td {
-  padding: 8px;
-  border: 1px solid #ddd;
-}
+/* Table */
+table { width: 100%; border-collapse: collapse; margin-top: 10px; text-align: center; font-size: 0.9rem; }
+th, td { padding: 8px; border: 1px solid #ddd; }
 th { background: #f0e5de; color: #4e342e; }
 
 /* Buy Button */
-.buy-btn {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #8d6e63;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
+.buy-btn { margin-top: 10px; padding: 10px 20px; background: #8d6e63; color: white; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s ease; }
 .buy-btn:hover { background: #4e342e; transform: scale(1.05); }
 
-/* Fade In Animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Fade-in */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 1s ease-out, transform 1s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* Footer */
-footer {
-  background: #4e342e;
-  color: white;
-  padding: 2rem;
-  text-align: center;
-  margin-top: 2rem;
-}
+footer { background: #4e342e; color: white; padding: 2rem; text-align: center; margin-top: 2rem; }
 footer a { color: #ffcc80; text-decoration: none; transition: 0.3s; }
 footer a:hover { color: #fff; }
 
 /* Responsive */
-@media (max-width: 480px) {
-  .menu { grid-template-columns: 1fr; }
-}
+@media (max-width: 480px) { .menu { grid-template-columns: 1fr; } }
