@@ -5,22 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChocoBliss</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#flavors">Flavors</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <!-- Floating Chocolates & Sparkles -->
-  <div class="floating-chocolates">
-    <div class="choco small"></div>
-    <div class="choco medium"></div>
-    <div class="choco large"></div>
-    <div class="choco medium"></div>
-    <div class="choco small"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-    <div class="sparkle"></div>
-  </div>
+  <div class="floating-chocolates"></div>
 
   <!-- Scroll Particles -->
   <div class="scroll-particles"></div>
@@ -34,50 +33,57 @@
   <!-- About Section -->
   <section id="about">
     <h2 class="fade-in">About Us</h2>
-    <p class="fade-in">ChocoBliss is more than just chocolate – it’s pure happiness crafted into every bar. 
-       Our journey began with a passion to blend rich cocoa with exciting flavors, bringing joy to chocolate lovers worldwide. 
-       Whether you love creamy milk, bold dark, or fruity infusions, we have a Bliss for you!</p>
+    <p class="fade-in">
+      ChocoBliss is crafted for chocolate lovers who seek luxury in every bite. 
+      From creamy milk to rich dark, every chocolate bar is a piece of art made with premium cocoa.
+    </p>
   </section>
 
   <!-- Flavors Section -->
   <section id="flavors">
     <h2 class="fade-in">Our Flavors</h2>
     <div class="menu">
-      <div class="menu-item fade-in" style="transition-delay: 0s;">
-        <img src="https://via.placeholder.com/300x200/6b3e26/fff?text=Milk+Bliss" alt="Milk Bliss">
+      <div class="menu-item fade-in" style="transition-delay:0s;">
+        <img src="https://images.unsplash.com/photo-1603046891552-ff42e16212cb?auto=format&fit=crop&w=400&q=80" alt="Milk Bliss">
         <h3>Milk Bliss</h3>
-        <p>Classic creamy milk chocolate for timeless taste.</p>
+        <p>Classic creamy milk chocolate with a luxurious texture.</p>
+        <button class="order-btn">Order Now</button>
       </div>
-      <div class="menu-item fade-in" style="transition-delay: 0.2s;">
-        <img src="https://via.placeholder.com/300x200/4e342e/fff?text=Dark+Bliss" alt="Dark Bliss">
+      <div class="menu-item fade-in" style="transition-delay:0.2s;">
+        <img src="https://images.unsplash.com/photo-1617196039145-5e4d72f7a9c4?auto=format&fit=crop&w=400&q=80" alt="Dark Bliss">
         <h3>Dark Bliss</h3>
-        <p>Rich 70% cocoa for true dark chocolate lovers.</p>
+        <p>70% cocoa dark chocolate for the true connoisseur.</p>
+        <button class="order-btn">Order Now</button>
       </div>
-      <div class="menu-item fade-in" style="transition-delay: 0.4s;">
-        <img src="https://via.placeholder.com/300x200/8d6e63/fff?text=Nutty+Bliss" alt="Nutty Bliss">
+      <div class="menu-item fade-in" style="transition-delay:0.4s;">
+        <img src="https://images.unsplash.com/photo-1617196039054-0cb26eec930e?auto=format&fit=crop&w=400&q=80" alt="Nutty Bliss">
         <h3>Nutty Bliss</h3>
-        <p>Loaded with crunchy nuts blended with cocoa.</p>
+        <p>Crispy nuts infused in rich chocolate for a crunchy delight.</p>
+        <button class="order-btn">Order Now</button>
       </div>
-      <div class="menu-item fade-in" style="transition-delay: 0.6s;">
-        <img src="https://via.placeholder.com/300x200/a1887f/fff?text=Caramel+Bliss" alt="Caramel Bliss">
+      <div class="menu-item fade-in" style="transition-delay:0.6s;">
+        <img src="https://images.unsplash.com/photo-1599785209797-3f5c74f2a981?auto=format&fit=crop&w=400&q=80" alt="Caramel Bliss">
         <h3>Caramel Bliss</h3>
-        <p>Silky milk chocolate filled with golden caramel.</p>
+        <p>Silky caramel wrapped in decadent milk chocolate.</p>
+        <button class="order-btn">Order Now</button>
       </div>
-      <div class="menu-item fade-in" style="transition-delay: 0.8s;">
-        <img src="https://via.placeholder.com/300x200/d7ccc8/000?text=Berry+Bliss" alt="Berry Bliss">
+      <div class="menu-item fade-in" style="transition-delay:0.8s;">
+        <img src="https://images.unsplash.com/photo-1601924582971-399f46615f58?auto=format&fit=crop&w=400&q=80" alt="Berry Bliss">
         <h3>Berry Bliss</h3>
-        <p>A fusion of dark chocolate and tangy berries.</p>
+        <p>Sweet berries perfectly blended with dark chocolate.</p>
+        <button class="order-btn">Order Now</button>
       </div>
-      <div class="menu-item fade-in" style="transition-delay: 1s;">
-        <img src="https://via.placeholder.com/300x200/cd7f32/fff?text=Mint+Bliss" alt="Mint Bliss">
+      <div class="menu-item fade-in" style="transition-delay:1s;">
+        <img src="https://images.unsplash.com/photo-1603046891595-6bdfd58b9e49?auto=format&fit=crop&w=400&q=80" alt="Mint Bliss">
         <h3>Mint Bliss</h3>
-        <p>Refreshing mint infused with smooth chocolate.</p>
+        <p>Refreshing mint notes infused in smooth chocolate.</p>
+        <button class="order-btn">Order Now</button>
       </div>
     </div>
   </section>
 
   <!-- Contact / Footer -->
-  <footer>
+  <footer id="contact">
     <h2>Contact Us</h2>
     <p>Email: hello@chocobliss.com | Phone: +123-456-789</p>
     <p>Follow us on Instagram & Facebook @ChocoBliss</p>
