@@ -1,23 +1,38 @@
-// Fade-in on scroll
-document.addEventListener("scroll", function () {
-  const fadeElems = document.querySelectorAll(".fade-in");
-  fadeElems.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) el.classList.add("visible");
+// Fade-in using IntersectionObserver
+const fadeElems = document.querySelectorAll(".fade-in");
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add("visible");
   });
-});
+},{threshold:0.1});
+fadeElems.forEach(el=>observer.observe(el));
 
-// Scroll particles
+// Floating chocolates
+const floatContainer = document.querySelector(".floating-chocolates");
+for(let i=0;i<10;i++){
+  const div = document.createElement("div");
+  div.className = i<5 ? `choco ${['small','medium','large','medium','small'][i]}` : 'sparkle';
+  div.style.left = Math.random()*100+'%';
+  div.style.top = -Math.random()*200+'px';
+  div.style.animationDuration = (Math.random()*8 + 12)+'s';
+  floatContainer.appendChild(div);
+}
+
+// Scroll particles optimized
 const particlesContainer = document.querySelector(".scroll-particles");
-document.addEventListener("scroll", function() {
-  const particle = document.createElement("div");
-  particle.classList.add("particle");
-  const x = (Math.random() - 0.5) * 100; // random horizontal movement
-  const y = Math.random() * 100 + 50;   // random vertical movement
-  particle.style.setProperty("--x", `${x}px`);
-  particle.style.setProperty("--y", `${y}px`);
-  particle.style.left = Math.random() * window.innerWidth + "px";
-  particle.style.top = window.scrollY + "px";
-  particlesContainer.appendChild(particle);
-  setTimeout(() => particle.remove(), 3000);
+let scrollTimeout;
+document.addEventListener("scroll",()=>{
+  if(scrollTimeout) clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(()=>{
+    const particle = document.createElement("div");
+    particle.classList.add("particle");
+    const x = (Math.random()-0.5)*100;
+    const y = Math.random()*100+50;
+    particle.style.setProperty("--x",`${x}px`);
+    particle.style.setProperty("--y",`${y}px`);
+    particle.style.left = Math.random()*window.innerWidth+'px';
+    particle.style.top = window.scrollY+'px';
+    particlesContainer.appendChild(particle);
+    setTimeout(()=>particle.remove(),3000);
+  },50);
 });
