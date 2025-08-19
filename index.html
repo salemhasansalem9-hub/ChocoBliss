@@ -14,47 +14,83 @@
       text-align: center;
       transition: background 0.3s, color 0.3s;
     }
+
+    /* Dark mode */
+    body.dark {
+      background: #1e1e1e;
+      color: #f5f5f5;
+    }
+    body.dark header, body.dark footer, body.dark nav {
+      background: #000;
+      color: #fff;
+    }
+    body.dark .menu-item {
+      background: #2b2b2b;
+      border-color: #555;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #4e342e;
+      padding: 10px 20px;
+      color: #fff;
+    }
+    nav .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    nav .menu {
+      display: flex;
+      gap: 15px;
+    }
+    nav .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+    }
+    nav .menu a:hover {
+      text-decoration: underline;
+    }
+    nav .actions {
+      display: flex;
+      gap: 10px;
+    }
+    nav button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .login-btn { background: #6d4c41; color: #fff; }
+    .signup-btn { background: #2e7d32; color: #fff; }
+    .mode-btn { background: #fbc02d; color: #000; }
+
     header {
       background: #4e342e;
       color: #fff;
-      padding: 20px;
-      position: relative;
+      padding: 40px 20px;
     }
-    header h1 { margin: 0; font-size: 2.5em; }
-    header p { margin: 5px 0 15px; font-size: 1.2em; }
-
-    /* Cart Button */
-    #cartBtn {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      background: #ff9800;
-      border: none;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
-    #cartBtn:hover { background: #e68900; }
-
-    /* Dark/Light Mode Button */
-    #modeToggle {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-      background: #2196f3;
-      border: none;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
     }
-    #modeToggle:hover { background: #1976d2; }
 
-    h2 { margin: 40px 0 20px; font-size: 2em; color: #4e342e; }
+    h2 {
+      margin: 40px 0 20px;
+      font-size: 2em;
+      color: #4e342e;
+    }
 
-    .menu {
+    /* Flavors grid */
+    .menu-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -70,178 +106,139 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s;
     }
-    .menu-item:hover { transform: translateY(-5px); }
-    .menu-item img { width: 100%; border-radius: 10px; }
-    .menu-item h3 { margin: 10px 0 5px; font-size: 1.5em; color: #4e342e; }
-    .menu-item p { margin: 5px 0; font-size: 1em; }
-    .price { font-weight: bold; color: #2e7d32; font-size: 1.2em; }
-    .add-btn, .details-btn {
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+    .menu-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .menu-item h3 {
+      margin: 10px 0 5px;
+      font-size: 1.5em;
+      color: #4e342e;
+    }
+    .menu-item p {
+      margin: 5px 0;
+      font-size: 1em;
+    }
+    .price {
+      font-weight: bold;
+      color: #2e7d32;
+      font-size: 1.2em;
+    }
+
+    /* Cart at bottom */
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
       background: #4e342e;
       color: #fff;
-      border: none;
       padding: 10px;
-      margin-top: 10px;
+      text-align: center;
+    }
+    .cart-bar button {
+      background: #fbc02d;
+      color: #000;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
       border-radius: 5px;
       cursor: pointer;
-      width: 100%;
+      font-weight: bold;
     }
-    .add-btn:hover, .details-btn:hover { background: #3b241e; }
 
     footer {
       background: #4e342e;
       color: #fff;
       padding: 15px;
-      margin-top: 30px;
-    }
-
-    /* Cart Modal */
-    .cart-modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-    }
-    .cart-content {
-      background: #fff;
-      padding: 20px;
-      width: 400px;
-      border-radius: 10px;
-      text-align: left;
-    }
-    .cart-content h3 { margin-top: 0; }
-    .cart-content ul { list-style: none; padding: 0; }
-    .cart-content li { margin: 10px 0; }
-    .close-btn {
-      background: #d32f2f;
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      float: right;
-    }
-    .checkout-btn {
-      background: #2e7d32;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-      width: 100%;
-    }
-
-    /* Dark Mode */
-    body.dark {
-      background: #121212;
-      color: #eee;
-    }
-    body.dark header {
-      background: #1e1e1e;
-    }
-    body.dark .menu-item {
-      background: #1e1e1e;
-      border-color: #333;
-      color: #eee;
-    }
-    body.dark footer {
-      background: #1e1e1e;
-    }
-    body.dark .cart-content {
-      background: #1e1e1e;
-      color: #eee;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">🍫 ChocoBliss</div>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Flavors</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="actions">
+      <button class="login-btn">Login</button>
+      <button class="signup-btn">Sign Up</button>
+      <button class="mode-btn" onclick="toggleMode()">🌗 Mode</button>
+    </div>
+  </nav>
+
+  <!-- Header -->
   <header>
-    <button id="modeToggle">🌙 Dark Mode</button>
-    <h1>🍫 ChocoBliss</h1>
+    <h1>Welcome to ChocoBliss</h1>
     <p>"A Bite of Happiness in Every Square"</p>
-    <button id="cartBtn">🛒 Cart (0)</button>
   </header>
 
+  <!-- Flavors Section -->
   <h2>✨ Our Flavors</h2>
-  <div class="menu">
+  <div class="menu-grid">
 
+    <!-- Milk Bliss -->
     <div class="menu-item">
       <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/B99C7719-4319-4E15-8A1B-7D3B4DF088CE.png" alt="Milk Bliss">
       <h3>Milk Bliss</h3>
       <p>Classic creamy milk chocolate.</p>
       <p class="price">$3.50</p>
-      <button class="add-btn" onclick="addToCart('Milk Bliss', 3.50)">Add to Cart</button>
-      <button class="details-btn" onclick="openDetails('Milk Bliss', 'Classic creamy milk chocolate.', 3.50)">Details</button>
     </div>
 
+    <!-- Dark Bliss -->
     <div class="menu-item">
       <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/B6777080-E156-4AC8-8C3F-2C47A969073B.jpeg" alt="Dark Bliss">
       <h3>Dark Bliss</h3>
       <p>Rich 70% cocoa.</p>
       <p class="price">$4.00</p>
-      <button class="add-btn" onclick="addToCart('Dark Bliss', 4.00)">Add to Cart</button>
-      <button class="details-btn" onclick="openDetails('Dark Bliss', 'Rich 70% cocoa.', 4.00)">Details</button>
     </div>
 
+    <!-- Nutty Bliss -->
     <div class="menu-item">
       <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/CEAFDFC1-E9D5-438C-89FC-0C88227A9BB2.png" alt="Nutty Bliss">
       <h3>Nutty Bliss</h3>
       <p>Crunchy nuts with cocoa.</p>
       <p class="price">$4.50</p>
-      <button class="add-btn" onclick="addToCart('Nutty Bliss', 4.50)">Add to Cart</button>
-      <button class="details-btn" onclick="openDetails('Nutty Bliss', 'Crunchy nuts with cocoa.', 4.50)">Details</button>
     </div>
 
+    <!-- Caramel Bliss -->
     <div class="menu-item">
       <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/5CF5D510-7A58-4F55-90A4-088FB55A5134.png" alt="Caramel Bliss">
       <h3>Caramel Bliss</h3>
       <p>Milk chocolate with caramel.</p>
       <p class="price">$4.20</p>
-      <button class="add-btn" onclick="addToCart('Caramel Bliss', 4.20)">Add to Cart</button>
-      <button class="details-btn" onclick="openDetails('Caramel Bliss', 'Milk chocolate with caramel.', 4.20)">Details</button>
     </div>
 
+    <!-- Berry Bliss -->
     <div class="menu-item">
       <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/24D6739C-5877-41D0-95ED-147C887AB691.png" alt="Berry Bliss">
       <h3>Berry Bliss</h3>
       <p>Dark chocolate with berries.</p>
       <p class="price">$4.80</p>
-      <button class="add-btn" onclick="addToCart('Berry Bliss', 4.80)">Add to Cart</button>
-      <button class="details-btn" onclick="openDetails('Berry Bliss', 'Dark chocolate with berries.', 4.80)">Details</button>
     </div>
 
+    <!-- Mint Bliss -->
     <div class="menu-item">
       <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/68F698AE-5B3D-468F-8CCC-8DE1CD791117.png" alt="Mint Bliss">
       <h3>Mint Bliss</h3>
       <p>Refreshing mint chocolate.</p>
       <p class="price">$4.00</p>
-      <button class="add-btn" onclick="addToCart('Mint Bliss', 4.00)">Add to Cart</button>
-      <button class="details-btn" onclick="openDetails('Mint Bliss', 'Refreshing mint chocolate.', 4.00)">Details</button>
     </div>
 
   </div>
 
-  <!-- Cart Modal -->
-  <div class="cart-modal" id="cartModal">
-    <div class="cart-content">
-      <button class="close-btn" onclick="closeCart()">X</button>
-      <h3>Your Cart</h3>
-      <ul id="cartItems"></ul>
-      <p><strong>Total: $<span id="cartTotal">0.00</span></strong></p>
-      <button class="checkout-btn">Checkout</button>
-    </div>
-  </div>
-
-  <!-- Details Modal -->
-  <div class="cart-modal" id="detailsModal">
-    <div class="cart-content">
-      <button class="close-btn" onclick="closeDetails()">X</button>
-      <h3 id="detailsTitle"></h3>
-      <p id="detailsDesc"></p>
-      <p><strong>Price: $<span id="detailsPrice"></span></strong></p>
-    </div>
+  <!-- Cart at bottom -->
+  <div class="cart-bar">
+    <button>🛒 Cart (0)</button>
   </div>
 
   <footer>
@@ -249,56 +246,9 @@
   </footer>
 
   <script>
-    let cart = [];
-
-    function addToCart(name, price) {
-      const item = cart.find(i => i.name === name);
-      if (item) {
-        item.qty++;
-      } else {
-        cart.push({ name, price, qty: 1 });
-      }
-      updateCart();
+    function toggleMode() {
+      document.body.classList.toggle('dark');
     }
-
-    function updateCart() {
-      document.getElementById("cartBtn").innerText =
-        "🛒 Cart (" + cart.reduce((a, b) => a + b.qty, 0) + ")";
-      const list = document.getElementById("cartItems");
-      list.innerHTML = "";
-      let total = 0;
-      cart.forEach(item => {
-        total += item.price * item.qty;
-        list.innerHTML += `<li>${item.name} x${item.qty} - $${(item.price * item.qty).toFixed(2)}</li>`;
-      });
-      document.getElementById("cartTotal").innerText = total.toFixed(2);
-    }
-
-    document.getElementById("cartBtn").addEventListener("click", () => {
-      document.getElementById("cartModal").style.display = "flex";
-    });
-
-    function closeCart() {
-      document.getElementById("cartModal").style.display = "none";
-    }
-
-    // Details modal
-    function openDetails(name, desc, price) {
-      document.getElementById("detailsTitle").innerText = name;
-      document.getElementById("detailsDesc").innerText = desc;
-      document.getElementById("detailsPrice").innerText = price.toFixed(2);
-      document.getElementById("detailsModal").style.display = "flex";
-    }
-    function closeDetails() {
-      document.getElementById("detailsModal").style.display = "none";
-    }
-
-    // Dark/Light mode toggle
-    document.getElementById("modeToggle").addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      document.getElementById("modeToggle").innerText =
-        document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
-    });
   </script>
 
 </body>
