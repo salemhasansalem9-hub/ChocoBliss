@@ -8,154 +8,82 @@
 </head>
 <body>
 
-<!-- Hero Section -->
-<header>
-  <h1>🍫 ChocoBliss</h1>
-  <p>"A Bite of Happiness in Every Square"</p>
-  <img src="images/hero-chocolate.jpg" alt="Choco Bliss Banner">
-</header>
+  <!-- Hero Section -->
+  <header>
+    <h1>🍫 ChocoBliss</h1>
+    <p>"A Bite of Happiness in Every Square"</p>
+  </header>
 
-<!-- About Section -->
-<section id="about">
-  <h2 class="fade-in">About Us</h2>
-  <p class="fade-in">
-    ChocoBliss is more than just chocolate – it’s pure happiness crafted into every bar.
-    Our journey began with a passion to blend rich cocoa with exciting flavors,
-    bringing joy to chocolate lovers worldwide. Whether you love creamy milk,
-    bold dark, or fruity infusions, we have a Bliss for you!
-  </p>
-</section>
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="fade-in">About Us</h2>
+    <p class="fade-in">ChocoBliss is more than just chocolate – it’s pure happiness crafted into every bar. 
+       Our journey began with a passion to blend rich cocoa with exciting flavors, bringing joy to chocolate lovers worldwide. 
+       Whether you love creamy milk, bold dark, or fruity infusions, we have a Bliss for you!</p>
+  </section>
 
-<!-- Flavors Section -->
-<section id="flavors">
-  <h2 class="fade-in">Our Flavors</h2>
-  <div class="menu">
-
-    <!-- Milk Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:0s;">
-      <img src="images/milk-bliss.png" alt="Milk Bliss">
-      <h3>Milk Bliss</h3>
-      <p>Classic creamy milk chocolate for timeless taste.</p>
-      <table>
-        <thead>
-          <tr><th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
+  <!-- Flavors Section -->
+  <section id="flavors">
+    <h2 class="fade-in">Our Flavors</h2>
+    <div class="menu">
+      <div class="menu-item fade-in" style="transition-delay: 0s;">
+        <img src="images/milk-bliss.png" alt="Milk Bliss">
+        <h3>Milk Bliss</h3>
+        <p>Classic creamy milk chocolate for timeless taste.</p>
+        <p class="price">$2.99</p>
+      </div>
+      <div class="menu-item fade-in" style="transition-delay: 0.2s;">
+        <img src="images/dark-bliss.png" alt="Dark Bliss">
+        <h3>Dark Bliss</h3>
+        <p>Rich 70% cocoa for true dark chocolate lovers.</p>
+        <p class="price">$3.50</p>
+      </div>
+      <div class="menu-item fade-in" style="transition-delay: 0.4s;">
+        <img src="images/nutty-bliss.png" alt="Nutty Bliss">
+        <h3>Nutty Bliss</h3>
+        <p>Loaded with crunchy nuts blended with cocoa.</p>
+        <p class="price">$3.75</p>
+      </div>
+      <div class="menu-item fade-in" style="transition-delay: 0.6s;">
+        <img src="images/caramel-bliss.png" alt="Caramel Bliss">
+        <h3>Caramel Bliss</h3>
+        <p>Silky milk chocolate filled with golden caramel.</p>
+        <p class="price">$3.25</p>
+      </div>
+      <div class="menu-item fade-in" style="transition-delay: 0.8s;">
+        <img src="images/berry-bliss.png" alt="Berry Bliss">
+        <h3>Berry Bliss</h3>
+        <p>A fusion of dark chocolate and tangy berries.</p>
+        <p class="price">$3.60</p>
+      </div>
+      <div class="menu-item fade-in" style="transition-delay: 1s;">
+        <img src="images/mint-bliss.png" alt="Mint Bliss">
+        <h3>Mint Bliss</h3>
+        <p>Refreshing mint infused with smooth chocolate.</p>
+        <p class="price">$3.40</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Dark Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:0.2s;">
-      <img src="images/dark-bliss.png" alt="Dark Bliss">
-      <h3>Dark Bliss</h3>
-      <p>Rich 70% cocoa for true dark chocolate lovers.</p>
-      <table>
-        <thead>
-          <tr><th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
-    </div>
+  <!-- Login Section -->
+  <section id="login">
+    <h2 class="fade-in">Login</h2>
+    <form class="login-form fade-in">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </section>
 
-    <!-- Nutty Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:0.4s;">
-      <img src="images/nutty-bliss.png" alt="Nutty Bliss">
-      <h3>Nutty Bliss</h3>
-      <p>Loaded with crunchy nuts blended with cocoa.</p>
-      <table>
-        <thead>
-          <tr><th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
-    </div>
+  <!-- Contact -->
+  <footer>
+    <h2>Contact Us</h2>
+    <p>Email: hello@chocobliss.com | Phone: +123-456-789</p>
+    <p>Follow us on Instagram & Facebook @ChocoBliss</p>
+    <p>© 2025 ChocoBliss. All Rights Reserved.</p>
+  </footer>
 
-    <!-- Caramel Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:0.6s;">
-      <img src="images/caramel-bliss.png" alt="Caramel Bliss">
-      <h3>Caramel Bliss</h3>
-      <p>Silky milk chocolate filled with golden caramel.</p>
-      <table>
-        <thead>
-          <tr><th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-
-    <!-- Berry Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:0.8s;">
-      <img src="images/berry-bliss.png" alt="Berry Bliss">
-      <h3>Berry Bliss</h3>
-      <p>A fusion of dark chocolate and tangy berries.</p>
-      <table>
-        <thead>
-          <tr><th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-
-    <!-- Mint Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:1s;">
-      <img src="images/mint-bliss.png" alt="Mint Bliss">
-      <h3>Mint Bliss</h3>
-      <p>Refreshing mint infused with smooth chocolate.</p>
-      <table>
-        <thead>
-          <tr><th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <h2>Contact Us</h2>
-  <p>Email: hello@chocobliss.com | Phone: +123-456-789</p>
-  <p>Follow us on <a href="#">Instagram</a> & <a href="#">Facebook</a> @ChocoBliss</p>
-  <p>© 2025 ChocoBliss. All Rights Reserved.</p>
-</footer>
-
-<script src="script.js"></script>
+  <canvas id="dust"></canvas>
+  <script src="script.js"></script>
 </body>
 </html>
