@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChocoBliss</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChocoBliss</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -12,16 +12,17 @@
 <header>
   <h1>🍫 ChocoBliss</h1>
   <p>"A Bite of Happiness in Every Square"</p>
-  <img src="https://i.ibb.co/s5xKzFP/hero-chocolate.jpg" alt="Choco Bliss Banner">
+  <img src="images/hero-chocolate.jpg" alt="Choco Bliss Banner">
 </header>
 
 <!-- About Section -->
 <section id="about">
   <h2 class="fade-in">About Us</h2>
   <p class="fade-in">
-    ChocoBliss is more than just chocolate – it’s pure happiness crafted into every bar. 
-    Our journey began with a passion to blend rich cocoa with exciting flavors, bringing joy to chocolate lovers worldwide. 
-    Whether you love creamy milk, bold dark, or fruity infusions, we have a Bliss for you!
+    ChocoBliss is more than just chocolate – it’s pure happiness crafted into every bar.
+    Our journey began with a passion to blend rich cocoa with exciting flavors,
+    bringing joy to chocolate lovers worldwide. Whether you love creamy milk,
+    bold dark, or fruity infusions, we have a Bliss for you!
   </p>
 </section>
 
@@ -32,7 +33,7 @@
 
     <!-- Milk Bliss -->
     <div class="menu-item fade-in" style="transition-delay:0s;">
-      <img src="https://i.ibb.co/0JkJ7vC/milk-bliss.png" alt="Milk Bliss">
+      <img src="images/milk-bliss.png" alt="Milk Bliss">
       <h3>Milk Bliss</h3>
       <p>Classic creamy milk chocolate for timeless taste.</p>
       <table>
@@ -51,7 +52,7 @@
 
     <!-- Dark Bliss -->
     <div class="menu-item fade-in" style="transition-delay:0.2s;">
-      <img src="https://i.ibb.co/V3vG9gG/dark-bliss.png" alt="Dark Bliss">
+      <img src="images/dark-bliss.png" alt="Dark Bliss">
       <h3>Dark Bliss</h3>
       <p>Rich 70% cocoa for true dark chocolate lovers.</p>
       <table>
@@ -70,7 +71,7 @@
 
     <!-- Nutty Bliss -->
     <div class="menu-item fade-in" style="transition-delay:0.4s;">
-      <img src="https://i.ibb.co/WFBvW4k/nutty-bliss.png" alt="Nutty Bliss">
+      <img src="images/nutty-bliss.png" alt="Nutty Bliss">
       <h3>Nutty Bliss</h3>
       <p>Loaded with crunchy nuts blended with cocoa.</p>
       <table>
@@ -89,7 +90,7 @@
 
     <!-- Caramel Bliss -->
     <div class="menu-item fade-in" style="transition-delay:0.6s;">
-      <img src="https://i.ibb.co/cbfpKTn/caramel-bliss.png" alt="Caramel Bliss">
+      <img src="images/caramel-bliss.png" alt="Caramel Bliss">
       <h3>Caramel Bliss</h3>
       <p>Silky milk chocolate filled with golden caramel.</p>
       <table>
@@ -108,7 +109,7 @@
 
     <!-- Berry Bliss -->
     <div class="menu-item fade-in" style="transition-delay:0.8s;">
-      <img src="https://i.ibb.co/K0qZbfp/berry-bliss.png" alt="Berry Bliss">
+      <img src="images/berry-bliss.png" alt="Berry Bliss">
       <h3>Berry Bliss</h3>
       <p>A fusion of dark chocolate and tangy berries.</p>
       <table>
@@ -127,7 +128,7 @@
 
     <!-- Mint Bliss -->
     <div class="menu-item fade-in" style="transition-delay:1s;">
-      <img src="https://i.ibb.co/0m5zMws/mint-bliss.png" alt="Mint Bliss">
+      <img src="images/mint-bliss.png" alt="Mint Bliss">
       <h3>Mint Bliss</h3>
       <p>Refreshing mint infused with smooth chocolate.</p>
       <table>
