@@ -12,39 +12,68 @@
       background: #f8f5f2;
       color: #333;
       text-align: center;
-      transition: background 0.3s, color 0.3s;
     }
-    body.dark { background: #121212; color: #eee; }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #4e342e;
+      padding: 10px 20px;
+      color: #fff;
+    }
+    nav .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    nav .menu {
+      display: flex;
+      gap: 15px;
+    }
+    nav .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+    }
+    nav .menu a:hover {
+      text-decoration: underline;
+    }
+    nav .actions {
+      display: flex;
+      gap: 10px;
+    }
+    nav button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .login-btn { background: #6d4c41; color: #fff; }
+    .signup-btn { background: #2e7d32; color: #fff; }
+    .cart-btn { background: #fbc02d; color: #000; }
+
     header {
       background: #4e342e;
       color: #fff;
-      padding: 20px;
-      position: relative;
+      padding: 40px 20px;
     }
-    header h1 { margin: 0; font-size: 2.5em; }
-    header p { margin: 5px 0 15px; font-size: 1.2em; }
-    header img { width: 300px; margin: 20px auto 0; display: block; }
-
-    /* Buttons */
-    #cartBtn, #modeToggle {
-      position: absolute;
-      top: 20px;
-      border: none;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
     }
-    #cartBtn { right: 20px; background: #ff9800; }
-    #cartBtn:hover { background: #e68900; }
-    #modeToggle { left: 20px; background: #2196f3; }
-    #modeToggle:hover { background: #1976d2; }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+    }
 
-    h2 { margin: 40px 0 20px; font-size: 2em; color: #4e342e; }
-    body.dark h2 { color: #ffcc80; }
-
-    .menu {
+    h2 {
+      margin: 40px 0 20px;
+      font-size: 2em;
+      color: #4e342e;
+    }
+    .menu-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -58,216 +87,118 @@
       width: 250px;
       padding: 15px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s, background 0.3s, color 0.3s;
+      transition: transform 0.3s;
     }
-    body.dark .menu-item { background: #1e1e1e; border-color: #444; color: #eee; }
-    .menu-item:hover { transform: translateY(-5px); }
-    .menu-item img { width: 100%; border-radius: 10px; }
-    .menu-item h3 { margin: 10px 0 5px; font-size: 1.5em; color: #4e342e; }
-    body.dark .menu-item h3 { color: #ffcc80; }
-    .price { font-weight: bold; color: #2e7d32; font-size: 1.2em; }
-
-    .add-btn, .details-btn, .buy-btn {
-      border: none;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
-      cursor: pointer;
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+    .menu-item img {
       width: 100%;
-      color: #fff;
+      border-radius: 10px;
     }
-    .add-btn { background: #4e342e; }
-    .add-btn:hover { background: #3b241e; }
-    .details-btn { background: #2196f3; }
-    .details-btn:hover { background: #1976d2; }
-    .buy-btn { background: #2e7d32; }
-    .buy-btn:hover { background: #1b5e20; }
-
+    .menu-item h3 {
+      margin: 10px 0 5px;
+      font-size: 1.5em;
+      color: #4e342e;
+    }
+    .menu-item p {
+      margin: 5px 0;
+      font-size: 1em;
+    }
+    .price {
+      font-weight: bold;
+      color: #2e7d32;
+      font-size: 1.2em;
+    }
     footer {
       background: #4e342e;
       color: #fff;
       padding: 15px;
       margin-top: 30px;
     }
-
-    /* Modals */
-    .cart-modal, .details-modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-    }
-    .cart-content, .details-content {
-      background: #fff;
-      padding: 20px;
-      width: 400px;
-      border-radius: 10px;
-      text-align: left;
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark .cart-content, body.dark .details-content {
-      background: #1e1e1e; color: #eee;
-    }
-    .cart-content h3, .details-content h3 { margin-top: 0; }
-    .close-btn {
-      background: #d32f2f;
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      float: right;
-    }
-    .checkout-btn {
-      background: #2e7d32;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
-      width: 100%;
-    }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">🍫 ChocoBliss</div>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">Flavors</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="actions">
+      <button class="login-btn">Login</button>
+      <button class="signup-btn">Sign Up</button>
+      <button class="cart-btn">🛒 Cart (0)</button>
+    </div>
+  </nav>
+
+  <!-- Header -->
   <header>
-    <h1>🍫 ChocoBliss</h1>
+    <h1>Welcome to ChocoBliss</h1>
     <p>"A Bite of Happiness in Every Square"</p>
-    <button id="modeToggle">☀️ Light/Dark</button>
-    <button id="cartBtn">🛒 Cart (0)</button>
-    <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/B99C7719-4319-4E15-8A1B-7D3B4DF088CE.png" alt="ChocoBliss Chocolate Bar">
   </header>
 
+  <!-- Flavors Section -->
   <h2>✨ Our Flavors</h2>
-  <div class="menu" id="menu"></div>
+  <div class="menu-grid">
 
-  <!-- Cart Modal -->
-  <div class="cart-modal" id="cartModal">
-    <div class="cart-content">
-      <button class="close-btn" onclick="closeCart()">X</button>
-      <h3>Your Cart</h3>
-      <ul id="cartItems"></ul>
-      <p><strong>Total: $<span id="cartTotal">0.00</span></strong></p>
-      <button class="checkout-btn">Checkout</button>
+    <!-- Milk Bliss -->
+    <div class="menu-item">
+      <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/B99C7719-4319-4E15-8A1B-7D3B4DF088CE.png" alt="Milk Bliss">
+      <h3>Milk Bliss</h3>
+      <p>Classic creamy milk chocolate.</p>
+      <p class="price">$3.50</p>
     </div>
-  </div>
 
-  <!-- Details Modal -->
-  <div class="details-modal" id="detailsModal">
-    <div class="details-content">
-      <button class="close-btn" onclick="closeDetails()">X</button>
-      <h3 id="detailsTitle"></h3>
-      <img id="detailsImg" src="" alt="" style="width:100%; border-radius:10px; margin:10px 0;">
-      <p id="detailsDesc"></p>
-      <p><strong>Price: $<span id="detailsPrice"></span></strong></p>
-      <button class="buy-btn" id="buyNowBtn">Buy Now</button>
+    <!-- Dark Bliss -->
+    <div class="menu-item">
+      <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/B6777080-E156-4AC8-8C3F-2C47A969073B.jpeg" alt="Dark Bliss">
+      <h3>Dark Bliss</h3>
+      <p>Rich 70% cocoa.</p>
+      <p class="price">$4.00</p>
     </div>
+
+    <!-- Nutty Bliss -->
+    <div class="menu-item">
+      <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/CEAFDFC1-E9D5-438C-89FC-0C88227A9BB2.png" alt="Nutty Bliss">
+      <h3>Nutty Bliss</h3>
+      <p>Crunchy nuts with cocoa.</p>
+      <p class="price">$4.50</p>
+    </div>
+
+    <!-- Caramel Bliss -->
+    <div class="menu-item">
+      <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/5CF5D510-7A58-4F55-90A4-088FB55A5134.png" alt="Caramel Bliss">
+      <h3>Caramel Bliss</h3>
+      <p>Milk chocolate with caramel.</p>
+      <p class="price">$4.20</p>
+    </div>
+
+    <!-- Berry Bliss -->
+    <div class="menu-item">
+      <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/24D6739C-5877-41D0-95ED-147C887AB691.png" alt="Berry Bliss">
+      <h3>Berry Bliss</h3>
+      <p>Dark chocolate with berries.</p>
+      <p class="price">$4.80</p>
+    </div>
+
+    <!-- Mint Bliss -->
+    <div class="menu-item">
+      <img src="https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/68F698AE-5B3D-468F-8CCC-8DE1CD791117.png" alt="Mint Bliss">
+      <h3>Mint Bliss</h3>
+      <p>Refreshing mint chocolate.</p>
+      <p class="price">$4.00</p>
+    </div>
+
   </div>
 
   <footer>
     <p>© 2025 ChocoBliss. All Rights Reserved.</p>
   </footer>
-
-  <script>
-    let cart = [];
-    let currentProductIndex = null;
-
-    const products = [
-      { name: "Milk Bliss", price: 3.50, desc: "Classic creamy milk chocolate.", img: "https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/B99C7719-4319-4E15-8A1B-7D3B4DF088CE.png" },
-      { name: "Dark Bliss", price: 4.00, desc: "Rich 70% cocoa.", img: "https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/B6777080-E156-4AC8-8C3F-2C47A969073B.jpeg" },
-      { name: "Nutty Bliss", price: 4.50, desc: "Crunchy nuts with cocoa.", img: "https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/CEAFDFC1-E9D5-438C-89FC-0C88227A9BB2.png" },
-      { name: "Caramel Bliss", price: 4.20, desc: "Milk chocolate with caramel.", img: "https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/5CF5D510-7A58-4F55-90A4-088FB55A5134.png" },
-      { name: "Berry Bliss", price: 4.80, desc: "Dark chocolate with berries.", img: "https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/24D6739C-5877-41D0-95ED-147C887AB691.png" },
-      { name: "Mint Bliss", price: 4.00, desc: "Refreshing mint chocolate.", img: "https://raw.githubusercontent.com/salemhasansalem9-hub/ChocoBliss/main/68F698AE-5B3D-468F-8CCC-8DE1CD791117.png" }
-    ];
-
-    // Render products
-    const menu = document.getElementById("menu");
-    products.forEach((p, i) => {
-      menu.innerHTML += `
-        <div class="menu-item">
-          <img src="${p.img}" alt="${p.name}">
-          <h3>${p.name}</h3>
-          <p>${p.desc}</p>
-          <p class="price">$${p.price.toFixed(2)}</p>
-          <button class="details-btn" onclick="showDetails(${i})">Details</button>
-          <button class="add-btn" onclick="addToCart('${p.name}', ${p.price})">Add to Cart</button>
-        </div>`;
-    });
-
-    function addToCart(name, price) {
-      const item = cart.find(i => i.name === name);
-      if (item) { item.qty++; } 
-      else { cart.push({ name, price, qty: 1 }); }
-      updateCart();
-      saveCart();
-    }
-
-    function updateCart() {
-      document.getElementById("cartBtn").innerText = "🛒 Cart (" + cart.reduce((a, b) => a + b.qty, 0) + ")";
-      const list = document.getElementById("cartItems");
-      list.innerHTML = "";
-      let total = 0;
-      cart.forEach((item, index) => {
-        total += item.price * item.qty;
-        list.innerHTML += `<li>${item.name} x${item.qty} - $${(item.price * item.qty).toFixed(2)} <button onclick="removeFromCart(${index})">❌</button></li>`;
-      });
-      document.getElementById("cartTotal").innerText = total.toFixed(2);
-    }
-
-    function removeFromCart(index) {
-      if (cart[index].qty > 1) { cart[index].qty--; } 
-      else { cart.splice(index, 1); }
-      updateCart();
-      saveCart();
-    }
-
-    // Cart Modal
-    document.getElementById("cartBtn").addEventListener("click", () => {
-      document.getElementById("cartModal").style.display = "flex";
-    });
-    function closeCart() { document.getElementById("cartModal").style.display = "none"; }
-
-    // Details Modal
-    function showDetails(i) {
-      currentProductIndex = i;
-      const p = products[i];
-      document.getElementById("detailsTitle").innerText = p.name;
-      document.getElementById("detailsImg").src = p.img;
-      document.getElementById("detailsDesc").innerText = p.desc;
-      document.getElementById("detailsPrice").innerText = p.price.toFixed(2);
-      document.getElementById("detailsModal").style.display = "flex";
-    }
-    function closeDetails() { document.getElementById("detailsModal").style.display = "none"; }
-
-    // Buy Now button inside modal
-    document.getElementById("buyNowBtn").addEventListener("click", () => {
-      if (currentProductIndex !== null) {
-        const p = products[currentProductIndex];
-        addToCart(p.name, p.price);
-        closeDetails();
-        document.getElementById("cartModal").style.display = "flex"; // open cart after buying
-      }
-    });
-
-    // Dark/Light Mode
-    document.getElementById("modeToggle").addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-    });
-
-    // Persistent Cart
-    function saveCart() { localStorage.setItem("cart", JSON.stringify(cart)); }
-    function loadCart() {
-      const stored = localStorage.getItem("cart");
-      if (stored) cart = JSON.parse(stored);
-      updateCart();
-    }
-    window.onload = loadCart;
-  </script>
 
 </body>
 </html>
