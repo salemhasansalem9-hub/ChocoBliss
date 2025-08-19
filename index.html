@@ -1,321 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChocoBliss</title>
-<style>
-  /* General Reset */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background: #fdf7f2; overflow-x: hidden; }
-  html { scroll-behavior: smooth; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChocoBliss</title>
+  <style>
+    /* General Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background: #fdfdfd; overflow-x: hidden; }
+    html { scroll-behavior: smooth; }
 
-  /* Chocolate Dust Animation Background */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: url('https://i.ibb.co/ZmX2P8S/chocolate-dust.png') repeat;
-    opacity: 0.1;
-    animation: moveDust 60s linear infinite;
-    pointer-events: none;
-    z-index: -1;
-  }
-  @keyframes moveDust {
-    0% { background-position: 0 0; }
-    100% { background-position: 2000px 1000px; }
-  }
+    /* Background particles */
+    canvas#particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: #fdfdfd;
+    }
 
-  /* Header */
-  header {
-    background: linear-gradient(135deg, #4e342e, #8d6e63);
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  header h1 { font-size: 3rem; margin-bottom: 1rem; }
-  header p { font-size: 1.3rem; }
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #3e2723;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      z-index: 10;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover { color: #ffcc80; }
 
-  /* Hero Image */
-  header img {
-    width: 80%;
-    max-width: 600px;
-    margin-top: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    animation: float 3s ease-in-out infinite;
-  }
-  @keyframes float {
-    0%,100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-  }
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #4e342e, #8d6e63);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 1rem; }
+    header p { font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .cta {
+      background: #ff7043;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .cta:hover { background: #ff5722; }
 
-  /* Section Styles */
-  section { padding: 4rem 2rem; text-align: center; position: relative; }
-  section h2 { font-size: 2rem; margin-bottom: 2rem; color: #4e342e; }
+    /* Section Styles */
+    section { padding: 4rem 2rem; text-align: center; }
+    section h2 { font-size: 2rem; margin-bottom: 2rem; color: #4e342e; }
 
-  /* Menu Grid */
-  .menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: auto;
-  }
-  .menu-item {
-    background: #fff7f0;
-    border-radius: 20px;
-    padding: 1.5rem;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    overflow: hidden;
-  }
-  .menu-item:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-  }
-  .menu-item img {
-    width: 100%;
-    border-radius: 15px;
-    margin-bottom: 1rem;
-    transition: transform 0.5s ease;
-  }
-  .menu-item img:hover {
-    transform: scale(1.05) rotate(2deg);
-  }
-  .menu-item h3 { margin-bottom: 0.5rem; color: #3e2723; }
-  .menu-item p { margin-bottom: 1rem; }
+    /* Menu Grid */
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .menu-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .menu-item:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .menu-item img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .menu-item h3 { margin-bottom: 0.5rem; color: #3e2723; }
+    .price { font-weight: bold; color: #ff7043; }
 
-  /* Pricing Table */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  th, td {
-    padding: 8px;
-    border: 1px solid #ddd;
-  }
-  th { background: #f0e5de; color: #4e342e; }
+    /* Fade In Animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  /* Buy Button */
-  .buy-btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #8d6e63;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s ease;
-  }
-  .buy-btn:hover { background: #4e342e; transform: scale(1.05); }
+    /* Footer */
+    footer {
+      background: #4e342e;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
 
-  /* Fade In Animation */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Footer */
-  footer {
-    background: #4e342e;
-    color: white;
-    padding: 2rem;
-    text-align: center;
-    margin-top: 2rem;
-  }
-  footer a { color: #ffcc80; text-decoration: none; transition: 0.3s; }
-  footer a:hover { color: #fff; }
-
-  /* Responsive */
-  @media (max-width: 480px) {
-    .menu { grid-template-columns: 1fr; }
-  }
-
-</style>
+    /* Login Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 20;
+    }
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+    }
+    .modal-content h3 { margin-bottom: 1rem; color: #3e2723; }
+    .modal-content input {
+      width: 100%;
+      padding: 0.6rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .modal-content button {
+      background: #4e342e;
+      color: white;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .close {
+      cursor: pointer;
+      color: #ff7043;
+      font-size: 1.2rem;
+      float: right;
+    }
+  </style>
 </head>
 <body>
+  <canvas id="particles"></canvas>
 
-<!-- Hero Section -->
-<header>
-  <h1>🍫 ChocoBliss</h1>
-  <p>"A Bite of Happiness in Every Square"</p>
-  <img src="https://i.ibb.co/s5xKzFP/hero-chocolate.jpg" alt="Choco Bliss Banner">
-</header>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#flavors">Flavors</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#" id="loginBtn">Login</a></li>
+    </ul>
+  </nav>
 
-<!-- About Section -->
-<section id="about">
-  <h2 class="fade-in">About Us</h2>
-  <p class="fade-in">ChocoBliss is more than just chocolate – it’s pure happiness crafted into every bar. 
-     Our journey began with a passion to blend rich cocoa with exciting flavors, bringing joy to chocolate lovers worldwide. 
-     Whether you love creamy milk, bold dark, or fruity infusions, we have a Bliss for you!</p>
-</section>
+  <!-- Hero Section -->
+  <header>
+    <h1>🍫 ChocoBliss</h1>
+    <p>"A Bite of Happiness in Every Square"</p>
+    <button class="cta">Shop Now</button>
+  </header>
 
-<!-- Flavors Section -->
-<section id="flavors">
-  <h2 class="fade-in">Our Flavors</h2>
-  <div class="menu">
-    
-    <!-- Milk Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:0s;">
-      <img src="https://i.ibb.co/0JkJ7vC/milk-bliss.png" alt="Milk Bliss">
-      <h3>Milk Bliss</h3>
-      <p>Classic creamy milk chocolate for timeless taste.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="fade-in">About Us</h2>
+    <p class="fade-in">ChocoBliss is more than just chocolate – it’s pure happiness crafted into every bar. 
+       Our journey began with a passion to blend rich cocoa with exciting flavors, bringing joy to chocolate lovers worldwide. 
+       Whether you love creamy milk, bold dark, or fruity infusions, we have a Bliss for you!</p>
+  </section>
+
+  <!-- Flavors Section -->
+  <section id="flavors">
+    <h2 class="fade-in">Our Flavors</h2>
+    <div class="menu">
+      <div class="menu-item fade-in">
+        <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/milk-bliss.png" alt="Milk Bliss">
+        <h3>Milk Bliss</h3>
+        <p>Classic creamy milk chocolate.</p>
+        <p class="price">$3.50</p>
+      </div>
+      <div class="menu-item fade-in">
+        <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/dark-bliss.png" alt="Dark Bliss">
+        <h3>Dark Bliss</h3>
+        <p>Rich 70% cocoa.</p>
+        <p class="price">$4.00</p>
+      </div>
+      <div class="menu-item fade-in">
+        <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/nutty-bliss.png" alt="Nutty Bliss">
+        <h3>Nutty Bliss</h3>
+        <p>Crunchy nuts with cocoa.</p>
+        <p class="price">$4.50</p>
+      </div>
+      <div class="menu-item fade-in">
+        <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/caramel-bliss.png" alt="Caramel Bliss">
+        <h3>Caramel Bliss</h3>
+        <p>Milk chocolate with caramel.</p>
+        <p class="price">$4.20</p>
+      </div>
+      <div class="menu-item fade-in">
+        <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/berry-bliss.png" alt="Berry Bliss">
+        <h3>Berry Bliss</h3>
+        <p>Dark chocolate with berries.</p>
+        <p class="price">$4.80</p>
+      </div>
+      <div class="menu-item fade-in">
+        <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/mint-bliss.png" alt="Mint Bliss">
+        <h3>Mint Bliss</h3>
+        <p>Refreshing mint chocolate.</p>
+        <p class="price">$4.00</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Dark Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:0.2s;">
-      <img src="https://i.ibb.co/V3vG9gG/dark-bliss.png" alt="Dark Bliss">
-      <h3>Dark Bliss</h3>
-      <p>Rich 70% cocoa for true dark chocolate lovers.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
+  <!-- Contact -->
+  <footer id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: hello@chocobliss.com | Phone: +123-456-789</p>
+    <p>Follow us on Instagram & Facebook @ChocoBliss</p>
+    <p>© 2025 ChocoBliss. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h3>Login</h3>
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button>Login</button>
+      <p>Don’t have an account? <a href="#">Sign Up</a></p>
     </div>
-
-    <!-- Nutty Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:0.4s;">
-      <img src="https://i.ibb.co/WFBvW4k/nutty-bliss.png" alt="Nutty Bliss">
-      <h3>Nutty Bliss</h3>
-      <p>Loaded with crunchy nuts blended with cocoa.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-
-    <!-- Caramel Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:0.6s;">
-      <img src="https://i.ibb.co/cbfpKTn/caramel-bliss.png" alt="Caramel Bliss">
-      <h3>Caramel Bliss</h3>
-      <p>Silky milk chocolate filled with golden caramel.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-
-    <!-- Berry Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:0.8s;">
-      <img src="https://i.ibb.co/K0qZbfp/berry-bliss.png" alt="Berry Bliss">
-      <h3>Berry Bliss</h3>
-      <p>A fusion of dark chocolate and tangy berries.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-
-    <!-- Mint Bliss -->
-    <div class="menu-item fade-in" style="transition-delay:1s;">
-      <img src="https://i.ibb.co/0m5zMws/mint-bliss.png" alt="Mint Bliss">
-      <h3>Mint Bliss</h3>
-      <p>Refreshing mint infused with smooth chocolate.</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Size</th><th>MRP</th><th>To Retailer</th><th>To Wholesaler</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>25g</td><td>₹10</td><td>₹7.5</td><td>₹6</td></tr>
-          <tr><td>50g</td><td>₹30</td><td>₹23</td><td>₹20</td></tr>
-          <tr><td>100g</td><td>₹60</td><td>₹45</td><td>₹40</td></tr>
-          <tr><td>Gift Pack</td><td>₹120</td><td>₹95</td><td>₹85</td></tr>
-        </tbody>
-      </table>
-      <button class="buy-btn">Buy Now</button>
-    </div>
-
   </div>
-</section>
 
-<!-- Footer -->
-<footer>
-  <h2>Contact Us</h2>
-  <p>Email: hello@chocobliss.com | Phone: +123-456-789</p>
-  <p>Follow us on <a href="#">Instagram</a> & <a href="#">Facebook</a> @ChocoBliss</p>
-  <p>© 2025 ChocoBliss. All Rights Reserved.</p>
-</footer>
-
-<!-- JS for Scroll Animation -->
-<script>
-  document.addEventListener("scroll", function () {
-    const fadeElems = document.querySelectorAll(".fade-in");
-    fadeElems.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        el.classList.add("visible");
-      }
+  <!-- JS -->
+  <script>
+    // Scroll Fade
+    document.addEventListener("scroll", function () {
+      const fadeElems = document.querySelectorAll(".fade-in");
+      fadeElems.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add("visible");
+        }
+      });
     });
-  });
-</script>
 
+    // Login Modal
+    const loginBtn = document.getElementById("loginBtn");
+    const loginModal = document.getElementById("loginModal");
+    const closeModal = document.getElementById("closeModal");
+
+    loginBtn.onclick = () => loginModal.style.display = "flex";
+    closeModal.onclick = () => loginModal.style.display = "none";
+    window.onclick = (e) => { if (e.target == loginModal) loginModal.style.display = "none"; };
+
+    // Dust Particle Animation
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+    for (let i = 0; i < 80; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      ctx.fillStyle = "rgba(120, 72, 60, 0.2)";
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if(p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if(p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.onresize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+  </script>
 </body>
 </html>
